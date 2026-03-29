@@ -1,0 +1,22 @@
+[package]
+name    = "escrow-manager"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name       = "escrow_manager"
+
+[features]
+no-entrypoint   = []
+no-idl          = []
+no-log-ix-name  = []
+cpi             = ["no-entrypoint"]
+idl-build       = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+default         = []
+
+[dependencies]
+anchor-lang     = "0.30.0"
+anchor-spl      = { version = "0.30.0", features = ["token", "associated_token"] }
+worker-registry = { path = "../worker_registry", features = ["cpi"] }
+payroll-vault   = { path = "../payroll_vault",   features = ["cpi"] }

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@stablepayroll/types": ["./target/types"]
+    }
+  },
+  "include": ["tests/**/*.ts", "scripts/**/*.ts"],
+  "exclude": ["node_modules", "app"]
+}
